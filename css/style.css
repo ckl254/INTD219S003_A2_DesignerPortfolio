@@ -1,0 +1,929 @@
+/*/////DOCUMENT SETTINGS/////*/
+@font-face {
+	font-family:Akzidenz-Grotesk;
+	src: url(../font/AkzidenzGrotesk-Regular.otf);
+	font-weight: 400;
+}
+
+@font-face {
+	font-family:Akzidenz-Grotesk;
+	src: url(../font/AkzidenzGrotesk-Medium.otf);
+	font-weight: 500;
+}
+
+/*Document styling - margin, padding, and Helvetica as default font style*/
+* {
+	margin: 0;
+	padding: 0;
+
+	font-family: Akzidenz-Grotesk, Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #413f40;
+
+	scroll-behavior: smooth;
+}
+
+/*Changing selection highlight and text colour*/
+::selection {
+  background: #fa3e23;
+  color: #fff;
+}
+
+/*Changing the default weight of bold tag*/
+b {
+	font-weight: 500;
+}
+
+
+/*Active links are orange*/
+.active a {
+	color: #fa3e23;
+}
+
+section{
+  min-height: 500px;
+}
+
+
+
+
+/*/////NAVBAR SETTINGS/////*/
+
+/*NAV CONTAINER*/
+.nav_container {
+	width: 100%;
+
+	position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+}
+
+/*NAV GRID*/
+.nav_grid {
+	padding: 0 4rem 0 4rem;
+	display: grid;
+	max-width: 1024px;
+	margin: 0 auto;
+	grid-template-columns: 1fr auto 1fr;
+    grid-gap: 30px;
+}
+
+/*NAV LOGO*/
+.nav_logo {
+	grid-column: 1;
+
+	font-weight: 500;
+	font-size: 2rem;
+	margin: 1rem 0 1rem 0;
+}
+
+.nav_logo:hover {
+	color: #fa3e23;
+}
+
+.nav_logo:active {
+	color: #e1371f;
+}
+
+
+/*NAV MENU*/
+.nav_menu {
+	grid-column: 3;
+	justify-self: end;
+	display: flex;
+	align-items: center;
+
+	padding: 1rem 0;
+/*    margin-right: 2rem;*/
+}
+
+.nav_menu a {
+	margin-left: 4rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+
+/*NAV MENU - UNDERLINE HOVER*/
+.nav_categories {
+	background-image: linear-gradient(transparent calc(100% - 1.75px), #413f40 10px);
+	background-position: 0% 0%;
+	background-size: 0% 100%;
+	background-repeat: no-repeat;
+	transition: all 0.0s;
+}
+
+.nav_categories:hover {
+	background-image: linear-gradient(transparent calc(100% - 1.75px), #fa3e23 10px);
+	background-size: 100% 100%;
+	transition: all 0.3s;
+	color: #fa3e23;
+}
+
+.nav_categories:active {
+	background-image: linear-gradient(transparent calc(100% - 1.75px), #e1371f 10px);
+	color: #e1371f;
+	transition: all 0.0s;
+}
+
+/*NAV OVERLAY (For mobile viewing)*/
+.nav_overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.overlaycontent {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 0;
+}
+
+#closeNav {
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    right: 4rem;
+    top: 1.5rem;
+}
+
+#closeNav:hover {
+    font-weight: 400;
+    color: #fa3e23;
+}
+
+a.overlayNavButton {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    flex-basis: 100%;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+a.overlayNavButton:hover {
+	color: #fa3e23;
+}
+
+a.overlayNavButton:active {
+	color: #e1371f;
+}
+
+#icon_menu {
+    display: none;
+    visibility: hidden;
+}
+
+#icon_menu:hover {
+	color: #fa3e23;
+}
+
+#icon_menu:active {
+	color: #e1371f;
+}
+
+
+
+/*/////LANDING PAGE SETTINGS/////*/
+
+/*PARALLAX CONTAINER*/
+.parallax_container {
+	width: 100%;
+}
+
+/*PARALLAX GRID*/
+.parallax_grid {
+	max-width: 1024px;
+	margin: 0 auto;
+	
+	padding: 6rem 4rem 3rem 4rem;
+	
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.parallax-container {
+    min-height: 75vh;
+}
+
+
+#parallax_pc {
+	display: inline-block;
+}
+
+#parallax_mobile {
+	display: none;
+}
+
+
+
+
+/*QUOTE CONTAINER*/
+.quote_container {
+	width: 100%;
+}
+
+/*QUOTE GRID*/
+.quote_grid {
+	max-width: 1024px;
+	margin: 0 auto;
+	
+	padding: 0 4rem 6rem 4rem;
+	
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 30px;
+}
+
+.quote {
+	grid-column: 2 / span 3;
+}
+
+h2 {
+	text-align: right;
+	font-size: 4rem;
+	font-weight: 500;
+	color: #fa3e23;
+}
+
+
+
+
+
+/*/////PRODUCT SETTINGS/////*/
+
+/*PRODUCT CONTAINER*/
+.product_container {
+	width: 100%;
+}
+
+/*Products grid dimensions*/
+#gridproducts {
+	max-width: 1024px;
+	margin: 0 auto;
+	
+	padding: 6rem 4rem 6rem 4rem;
+	
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-gap: 30px;
+}
+
+/*Content header placement and styling*/
+#productheader {
+	grid-row: 1 / span 1;
+	grid-column: 1 / span 1;
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+/*overlay positioning, sizing and animation*/
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .25s ease;
+}
+
+/*Text overlay settings*/
+.text {
+	color: white;
+    font-weight: 500;
+    font-size: 25pt;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+/*Setting each product along the grid as well as their respective image overlay settings*/
+.containersk4 {
+	grid-row: 1 / span 2;
+	grid-column: 2 / span 2;
+ 	position: relative;
+}
+
+.containersk4:hover .overlay {
+	background-image: url("https://res.cloudinary.com/dnrr3xcdr/image/upload/v1554112609/Dieter%20Rams/products_sk4.jpg");
+	background-size:100% 100%;
+	background-color: #fa3e23;
+	background-blend-mode: multiply;
+	opacity: 1;
+}
+
+.containert3 {
+	grid-row: 1 / span 1;
+	grid-column: 4 / span 1;
+ 	position: relative;
+
+}
+
+.containert3:hover .overlay {
+	background-image: url("https://res.cloudinary.com/dnrr3xcdr/image/upload/v1554112608/Dieter%20Rams/products_t3.jpg");
+	background-size:100% 100%;
+	background-color: #fa3e23;
+	background-blend-mode: multiply;
+	opacity: 1;
+}
+
+.containertp1 {
+	grid-row: 2 / span 1;
+	grid-column: 4 / span 1;
+ 	position: relative;
+}
+
+.containertp1:hover .overlay {
+	background-image: url("https://res.cloudinary.com/dnrr3xcdr/image/upload/v1554112610/Dieter%20Rams/products_tp1.jpg");
+	background-size:100% 100%;
+	background-color: #fa3e23;
+	background-blend-mode: multiply;
+	opacity: 1;
+}
+
+.container606 {
+	grid-row: 3 / span 1;
+	grid-column: 2 / span 1;
+ 	position: relative;
+}
+
+.container606:hover .overlay {
+	background-image: url("https://res.cloudinary.com/dnrr3xcdr/image/upload/v1554112601/Dieter%20Rams/products_606.jpg");
+	background-size:100% 100%;
+	background-color: #fa3e23;
+	background-blend-mode: multiply;
+	opacity: 1;
+}
+
+.container620 {
+	grid-row: 3 / span 1;
+	grid-column: 3 / span 1;
+ 	position: relative;
+}
+
+.container620:hover .overlay {
+	background-image: url("https://res.cloudinary.com/dnrr3xcdr/image/upload/v1554112602/Dieter%20Rams/products_620.jpg");
+	background-size:100% 100%;
+	background-color: #fa3e23;
+	background-blend-mode: multiply;
+	opacity: 1;
+}
+
+.containerps2 {
+	grid-row: 3 / span 1;
+	grid-column: 4 / span 1;
+ 	position: relative;
+}
+
+.containerps2:hover .overlay {
+	background-image: url("https://res.cloudinary.com/dnrr3xcdr/image/upload/v1554112608/Dieter%20Rams/products_ps2.jpg");
+	background-size:100% 100%;
+	background-color: #fa3e23;
+	background-blend-mode: multiply;
+	opacity: 1;
+}
+
+.containert2 {
+	grid-row: 4 / span 1;
+	grid-column: 2 / span 1;
+ 	position: relative;
+}
+
+.containert2:hover .overlay {
+	background-image: url("https://res.cloudinary.com/dnrr3xcdr/image/upload/v1554112608/Dieter%20Rams/products_t2.jpg");
+	background-size:100% 100%;
+	background-color: #fa3e23;
+	background-blend-mode: multiply;
+	opacity: 1;
+}
+
+.containermpz22 {
+	grid-row: 4 / span 1;
+	grid-column: 3 / span 1;
+ 	position: relative;
+}
+
+.containermpz22:hover .overlay {
+	background-image: url("https://res.cloudinary.com/dnrr3xcdr/image/upload/v1554112603/Dieter%20Rams/products_mpz22.jpg");
+	background-size:100% 100%;
+	background-color: #fa3e23;
+	background-blend-mode: multiply;
+	opacity: 1;
+}
+
+.containeret66 {
+	grid-row: 4 / span 1;
+	grid-column: 4 / span 1;
+ 	position: relative;
+}
+
+.containeret66:hover .overlay {
+	background-image: url("https://res.cloudinary.com/dnrr3xcdr/image/upload/v1554112604/Dieter%20Rams/products_et66.jpg");
+	background-size:100% 100%;
+	background-color: #fa3e23;
+	background-blend-mode: multiply;
+	opacity: 1;
+}
+
+
+
+
+
+/*/////ABOUT SETTINGS/////*/
+
+/*Rule settings*/
+.border_top {
+	border-top: 1px solid #c2c2c2;
+}
+
+/*About grid dimensions*/
+#gridabout {
+	max-width: 1024px;
+	margin: 0 auto;
+	
+	padding: 6rem 4rem 6rem 4rem;
+
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: min-content;
+	grid-column-gap: 1.875rem;
+	grid-row-gap: 1.875rem;
+}
+
+/*About image margins at the bottom*/
+#gridabout img {
+	margin-bottom: 1.875rem;
+}
+
+/*Content header placement and styling*/
+#aboutheader {
+	grid-row: 1 / span 1;
+	grid-column: 1 / span 1;
+
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+/*About portrait placement*/
+#aboutportrait{
+	grid-row: 1 / 1;
+	grid-column: 2 / span 2;
+}
+
+/*Content subhead placement and styling*/
+#aboutsubhead{
+	grid-row: 2;
+	grid-column: 1 / span 1;
+
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+/*Body styling and spacing*/
+.aboutbody p {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+}
+
+/*About body 1 placement*/
+#earlyyears1 {
+	grid-row: 2;
+	grid-column: 2 / span 1;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #c2c2c2;
+}
+
+/*Content subhead 3 placement*/
+#aboutsubhead3 {
+	grid-row: 3;
+	grid-column: 1 / span 1;
+
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+/*Philosophy body placement*/
+#philosophy {
+	grid-row: 3;
+	grid-column: 2 / span 1;
+	padding-bottom: 1rem;
+}
+
+/*About sketchbook placement*/
+#aboutsketchbook {
+	grid-row: 4;
+	grid-column: 2 / span 1;
+}
+
+/*Content subhead 2 placement*/
+#aboutsubhead2{
+	grid-row: 5;
+	grid-column: 1 / span 1;
+
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+/*About body 2 placement*/
+#principles {
+	grid-row: 5;
+	grid-column: 2 / span 1;
+	padding-bottom: 1rem;
+
+	/*border-bottom: 1px solid #c2c2c2;*/
+}
+
+/*Principles list placement*/
+#principleslist {
+	grid-row: 6;
+	grid-column: 2 / span 1;
+	border-bottom: 1px solid #c2c2c2;
+}
+
+/*Principles list text settings*/
+#principleslist h5 {
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.6;
+	margin-bottom: 0.5rem;
+}
+
+#principleslist p {
+	margin-bottom: 3rem;
+}
+
+
+
+
+
+/*/////PRODUCT PAGE/////*/
+
+/*Product page grid dimensions*/
+.gridproductpage {
+	max-width: 1024px;
+	margin: 0 auto;
+	
+	padding: 6rem 4rem 6rem 4rem;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: min-content;
+	grid-column-gap: 30px;
+	grid-row-gap: 30px;
+}
+
+/*Content header placement*/
+.productpageinfo {
+	grid-row: 1 / span 2;
+	grid-column: 1 / span 1;
+}
+
+/*Content header styling*/
+.productpageinfo h3 {
+	font-size: 2rem;
+	font-weight: 500;
+	margin-bottom: 4rem;
+}
+
+/*Content technical information styling*/
+.productpageinfo h4 {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.6;
+	margin-bottom: 0.5rem;
+}
+
+/*Product page image placement*/
+.productpageimage1 {
+	grid-row: 1 / span 2;
+	grid-column: 2 / span 2;
+}
+
+/*Product page body styling and spacing*/
+.productpagebody {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+}
+
+/*Product page authors body styling and spacing*/
+.authors {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.6;
+	margin-bottom: 0.5rem;
+}
+
+/*Product page authors ul spacing*/
+ul.authors {
+	padding-left: 2rem;
+}
+
+/*Product page authors il spacing*/
+.authors li {
+	padding-left: 0.5rem;
+}
+
+/*Product page body text placement*/
+#productpagebody_grid {
+	grid-row: 3;
+	grid-column: 2 / span 2;
+}
+
+
+
+
+
+/*/////MEDIA QUERIES (RESPONSIVENESS)/////*/
+
+@media all and (min-width: 951px) {
+    .nav_menu > #icon_menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 950px) {
+
+	.nav_categories {
+		display: none;
+	}
+
+	.nav_menu > #icon_menu {
+		display: block;
+        visibility: visible;
+        cursor: pointer;
+	}
+
+
+
+	#parallax_pc {
+		display: none;
+	}
+
+	#parallax_mobile {
+		display: inline-block;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+
+
+	#earlyyears1 {
+		grid-row: 2;
+		grid-column: 2 / span 2;
+	}
+
+	#philosophy {
+		grid-row: 3;
+		grid-column: 2 / span 2;
+	}
+
+	#aboutsketchbook {
+		grid-row: 4;
+		grid-column: 2 / span 2;
+	}
+
+	#principles {
+		grid-row: 5;
+		grid-column: 2 / span 2;
+	}
+
+	#principleslist {
+		grid-row: 6;
+		grid-column: 2 / span 2;
+	}
+
+
+
+	.productpageimage1 {
+		grid-row: 1 / span 3;
+		grid-column: 2 / span 3;
+	}
+
+	#productpagebody_grid {
+		grid-row: 4;
+		grid-column: 2 / span 3;
+	}
+
+}
+
+@media screen and (max-width: 750px) {
+	.nav_grid {
+		padding: 0 2rem 0 2rem;
+	}
+
+	.nav_logo {
+		font-size: 1.5rem;
+	}
+
+	#closeNav {
+	    right: 2rem;
+	    top: 1rem;
+	}
+
+
+
+	.parallax_grid {
+		padding: 6rem 2rem 3rem 2rem;
+	}
+
+	.quote_grid {
+		grid-template-columns: 1fr;
+		padding: 0rem 2rem 6rem 2rem;
+	}
+
+	.quote {
+		grid-column: 1;
+	}
+
+
+
+	#gridproducts {
+		padding: 6rem 2rem 6rem 2rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content;
+	}
+
+	#productheader {
+		grid-row: 1 / span 1;
+		grid-column: 1 / span 1;
+		margin-bottom: 1rem;
+	}
+
+	.containersk4 {
+		grid-row: 2 / span 1;
+		grid-column: 1 / span 1;
+	}
+
+	.containert3 {
+		grid-row: 3 / span 1;
+		grid-column: 1 / span 1;
+	}
+
+	.containertp1 {
+		grid-row: 4 / span 1;
+		grid-column: 1 / span 1;
+	}
+
+	.container606 {
+		grid-row: 5 / span 1;
+		grid-column: 1 / span 1;
+	}
+
+	.container620 {
+		grid-row: 6 / span 1;
+		grid-column: 1 / span 1;
+	}
+
+	.containerps2 {
+		grid-row: 7 / span 1;
+		grid-column: 1 / span 1;
+	}
+
+	.containert2 {
+		grid-row: 8 / span 1;
+		grid-column: 1 / span 1;
+	}
+
+	.containermpz22 {
+		grid-row: 9 / span 1;
+		grid-column: 1 / span 1;
+	}
+
+	.containeret66 {
+		grid-row: 10 / span 1;
+		grid-column: 1 / span 1;
+	}
+
+
+
+	#gridabout {
+		padding: 6rem 2rem 6rem 2rem;
+		grid-template-columns: 1fr;
+	}
+
+	/*Content header placement and styling*/
+	#aboutheader {
+		grid-row: 1;
+		grid-column: 1 / span 1;
+		margin-bottom: 1rem;
+	}
+
+	/*About portrait placement*/
+	#aboutportrait{
+		grid-row: 2;
+		grid-column: 1 / span 1;
+	}
+
+	/*Content subhead placement and styling*/
+	#aboutsubhead{
+		grid-row: 3;
+		grid-column: 1 / span 1;
+	}
+
+	/*About body 1 placement*/
+	#earlyyears1 {
+		grid-row: 4;
+		grid-column: 1 / span 1;
+	}
+
+	#aboutsubhead3 {
+		grid-row: 5;
+		grid-column: 1 / span 1;
+	}
+
+	#philosophy {
+		grid-row: 6;
+		grid-column: 1 / span 1;
+	}
+
+	/*About sketchbook placement*/
+	#aboutsketchbook {
+		grid-row: 7;
+		grid-column: 1 / span 1;
+	}
+
+	#aboutsubhead2 {
+		grid-row: 8;
+		grid-column: 1 / span 1;
+	}
+
+	/*About body 2 placement*/
+	#principles {
+		grid-row: 9;
+		grid-column: 1 / span 1;
+	}
+
+	.aboutbody p {
+		font-size: 1rem;
+	}
+
+	#principleslist {
+		grid-row: 10;
+		grid-column: 1 / span 1;
+	}
+
+	#principleslist p {
+	    margin-bottom: 3rem;
+	}
+
+
+
+	.gridproductpage {
+		padding: 6rem 2rem 6rem 2rem;
+		grid-template-columns: 1fr;
+	}
+
+	.productpageinfo {
+		grid-row: 1;
+		grid-column: 1;
+	}
+
+	.productpageinfo h3 {
+		margin-bottom: 1.5rem;
+	}
+
+	.productpageimage1 {
+		grid-row: 2;
+		grid-column: 1;
+	}
+
+	#productpagebody_grid {
+		grid-row: 3;
+		grid-column: 1;
+	}
+}
+
+@media screen and (max-width: 465px) {
+	h2 {
+		font-size: 2rem;
+	}
+}
